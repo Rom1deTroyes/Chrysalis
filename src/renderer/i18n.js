@@ -20,11 +20,15 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-electron-language-detector";
 
 import English from "./i18n/en";
+import French from "./i18n/fr";
 import Hungarian from "./i18n/hu";
 
 const resources = {
   en: {
     messages: English
+  },
+  fr: {
+    messages: French
   },
   hu: {
     messages: Hungarian
