@@ -122,6 +122,24 @@ const consumer = addCategories(
           "1u": "🔅"
         }
       }
+    },
+    {
+      code: makeConsumer(0x30),
+      label: {
+        base: "Power"
+      }
+    },
+    {
+      code: makeConsumer(0x31),
+      label: {
+        base: "Reset"
+      }
+    },
+    {
+      code: makeConsumer(0x32),
+      label: {
+        base: "Sleep"
+      }
     }
   ]
 );

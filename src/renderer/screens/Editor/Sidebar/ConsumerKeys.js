@@ -128,12 +128,43 @@ const BrightnessKeys = withStyles(styles)(props => {
   );
 });
 
+const PowerKeys = withStyles(styles)(props => {
+  const keys = [
+    db.lookup(18480), // power
+    db.lookup(18481), // reset
+    db.lookup(18482) // sleep
+  ];
+
+  const keyButtons = keys.map((button, index) => {
+    return (
+      <KeyButton
+        key={`consumer-power-${index}`}
+        onKeyChange={props.onKeyChange}
+        keyObj={button}
+        noHint
+      />
+    );
+  });
+
+  return (
+    <Card variant="outlined" className={props.classes.card}>
+      <CardContent>
+        <Typography color="textSecondary" gutterBottom>
+          {i18n.t("editor.sidebar.consumer.power")}
+        </Typography>
+
+        {keyButtons}
+      </CardContent>
+    </Card>
+  );
+});
+
 class ConsumerKeysBase extends React.Component {
   render() {
     const { keymap, selectedKey, layer, onKeyChange } = this.props;
     const key = keymap.custom[layer][selectedKey];
 
-    const subWidgets = [VolumeKeys, MediaKeys, BrightnessKeys];
+    const subWidgets = [VolumeKeys, MediaKeys, BrightnessKeys, PowerKeys];
     const widgets = subWidgets.map((Widget, index) => {
       return (
         <Widget key={`consumer-group-${index}`} onKeyChange={onKeyChange} />

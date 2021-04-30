@@ -138,7 +138,8 @@ const English = {
         help: "Keys to control volume, brightness, and media controls.",
         volume: "Volume",
         media: "Media control",
-        brightness: "Brightness"
+        brightness: "Brightness",
+        power: "Power Management"
       },
       keypicker: {
         title: "Standard keys",
